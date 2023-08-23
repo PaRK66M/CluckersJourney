@@ -595,11 +595,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2018458634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 956bc342f851d6a42b1e69478649e81a, type: 3}
+  m_Script: {fileID: 11500000, guid: c52bf83191f412148aee578c7fc012e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  jumpPower: 4.8
-  jumpDecrease: 1.5
-  playerRb: {fileID: 2018458637}
-  playerAnimator: {fileID: 131501903}
+  Data: {fileID: 11400000, guid: 2f97784ec888e644a9a52b0b336e6d61, type: 2}
+  _groundCheckPoint: {fileID: 0}
+  _groundCheckSize: {x: 0.49, y: 0.03}
+  _frontWallCheckPoint: {fileID: 0}
+  _backWallCheckPoint: {fileID: 0}
+  _wallCheckSize: {x: 0.5, y: 1}
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
