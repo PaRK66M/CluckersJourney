@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 velocity;
 
     public Rigidbody2D playerRb;
+    public Animator playerAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +46,12 @@ public class PlayerMovement : MonoBehaviour
 
         if(movementX != 0)
         {
+            playerAnimator.SetBool("Moving", true);
             transform.localScale = new Vector3(-movementX, transform.localScale.y, transform.localScale.z);
+        }
+        else
+        {
+            playerAnimator.SetBool("Moving", false);
         }
     }
 
