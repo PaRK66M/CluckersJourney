@@ -40,9 +40,10 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 	//Jump
 	private bool _isJumpCut;
 	private bool _isJumpFalling;
-	private float currentJumpForce;
+	public float currentJumpForce;
+	public bool _isStuckOnWall;
 
-	private Vector2 _moveInput;
+	public Vector2 _moveInput;
 	public float LastPressedJumpTime { get; private set; }
 
 	//Set all of these up in the inspector
@@ -67,6 +68,7 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 	private void Start()
 	{
 		SetGravityScale(Data.gravityScale);
+		_isStuckOnWall = false;
 		IsFacingRight = false;
 		currentJumpForce = Data.jumpForce;
 	}
@@ -168,7 +170,7 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 
 		#region GRAVITY
 		//Higher gravity if we've released the jump input or are falling
-		if (IsSliding)
+		if (IsSliding || _isStuckOnWall)
 		{
 			SetGravityScale(0);
 		}
@@ -204,7 +206,7 @@ public class DawnosaurPlayerMovement : MonoBehaviour
         #endregion
 
         #region Animations
-		if(_moveInput.x == 0 && LastOnGroundTime > 0)
+		if((_moveInput.x == 0 && LastOnGroundTime > 0) || _isStuckOnWall)
         {
 			ANIMATOR.SetBool("Moving", false);
         }
@@ -321,6 +323,7 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 		//Ensures we can't call Jump multiple times from one press
 		LastPressedJumpTime = 0;
 		LastOnGroundTime = 0;
+		_isStuckOnWall = false;
 
 		#region Perform Jump
 		//We increase the force applied if we are falling
@@ -331,6 +334,7 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 			force -= RB.velocity.y;
 
 		RB.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+		Debug.Log("Jump");
 		currentJumpForce /= Data.multiJumpModifier; //modifies the current jump force for the next jump
 		#endregion
 	}
@@ -347,7 +351,8 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 		//The force applied can't be greater than the (negative) speedDifference * by how many times a second FixedUpdate() is called. For more info research how force are applied to rigidbodies.
 		movement = Mathf.Clamp(movement, -Mathf.Abs(speedDif) * (1 / Time.fixedDeltaTime), Mathf.Abs(speedDif) * (1 / Time.fixedDeltaTime));
 
-		RB.AddForce(movement * Vector2.up);
+        RB.AddForce(movement * Vector2.up);
+		
 	}
 	#endregion
 
@@ -371,7 +376,7 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 
 	public bool CanSlide()
 	{
-		if (LastOnWallTime > 0 && !IsJumping && LastOnGroundTime <= 0)
+		if (LastOnWallTime > 0 && !IsJumping && LastOnGroundTime <= 0 && !_isStuckOnWall)
 			return true;
 		else
 			return false;
