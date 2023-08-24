@@ -205,7 +205,7 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 		}
         #endregion
 
-        #region Animations
+        #region ANIMATIONS
 		if((_moveInput.x == 0 && LastOnGroundTime > 0) || _isStuckOnWall)
         {
 			ANIMATOR.SetBool("Moving", false);
@@ -326,16 +326,23 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 		_isStuckOnWall = false;
 
 		#region Perform Jump
+		float force = currentJumpForce;
+
+		/*I have removed this feature due to the player able to jump while falling and having it not possible to fly/hover infinitely
+
 		//We increase the force applied if we are falling
 		//This means we'll always feel like we jump the same amount 
 		//(setting the player's Y velocity to 0 beforehand will likely work the same, but I find this more elegant :D)
-		float force = currentJumpForce;
-		if (RB.velocity.y < 0)
-			force -= RB.velocity.y;
+		//if (RB.velocity.y < 0)
+		//    force -= RB.velocity.y;
+		*/
+
+
 
 		RB.AddForce(Vector2.up * force, ForceMode2D.Impulse);
-		Debug.Log("Jump");
 		currentJumpForce /= Data.multiJumpModifier; //modifies the current jump force for the next jump
+
+		Debug.Log("Jump " + transform.position.y);
 		#endregion
 	}
 	#endregion
