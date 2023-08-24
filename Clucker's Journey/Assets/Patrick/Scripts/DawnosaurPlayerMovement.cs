@@ -36,12 +36,15 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 	public float LastOnWallTime { get; private set; }
 	public float LastOnWallRightTime { get; private set; }
 	public float LastOnWallLeftTime { get; private set; }
+	public float JumpDelay;
 
 	//Jump
 	private bool _isJumpCut;
 	private bool _isJumpFalling;
 	public float currentJumpForce;
 	public bool _isStuckOnWall;
+	public bool _movedFromWall;
+	public float _wallPosition;
 
 	public Vector2 _moveInput;
 	public float LastPressedJumpTime { get; private set; }
@@ -69,6 +72,7 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 	{
 		SetGravityScale(Data.gravityScale);
 		_isStuckOnWall = false;
+		_movedFromWall = true;
 		IsFacingRight = false;
 		currentJumpForce = Data.jumpForce;
 	}
@@ -82,25 +86,26 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 		LastOnWallRightTime -= Time.deltaTime;
 		LastOnWallLeftTime -= Time.deltaTime;
 
+		JumpDelay -= Time.deltaTime;
+
 		LastPressedJumpTime -= Time.deltaTime;
 		#endregion
 
 		#region INPUT HANDLER
-		_moveInput.x = Input.GetAxisRaw("Horizontal");
-		_moveInput.y = Input.GetAxisRaw("Vertical");
+		_moveInput.x = Input.GetAxis("Horizontal");
+		_moveInput.y = Input.GetAxis("Vertical");
 
 		if (_moveInput.x != 0)
         {
 			CheckDirectionToFace(_moveInput.x > 0);
 		}
-        
 
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetButtonDown("Jump"))
 		{
 			OnJumpInput();
 		}
 
-		if (Input.GetKeyUp(KeyCode.Space))
+		if (Input.GetButtonUp("Jump"))
 		{
 			OnJumpUpInput();
 		}
@@ -115,6 +120,7 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 				LastOnGroundTime = Data.coyoteTime; //if so sets the lastGrounded to coyoteTime
 
 				currentJumpForce = Data.jumpForce; //resets the current jump force
+				_movedFromWall = true; //resets the wall stick
 			}
 
 			//Right Wall Check
@@ -140,8 +146,6 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 			_isJumpFalling = true;
 		}
 
-		
-
 		if (LastOnGroundTime > 0 && !IsJumping)
 		{
 			_isJumpCut = false;
@@ -150,9 +154,13 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 				_isJumpFalling = false;
 		}
 
+		if(Mathf.Abs(_wallPosition - transform.position.x) > 0.1f)
+        {
+			_movedFromWall = true;
+        }
 		
 		//Jump
-		if (CanJump() && LastPressedJumpTime > 0)
+		if (CanJump() && LastPressedJumpTime > 0 && JumpDelay < 0)
 		{
 			IsJumping = true;
 			_isJumpCut = false;
@@ -323,6 +331,7 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 		//Ensures we can't call Jump multiple times from one press
 		LastPressedJumpTime = 0;
 		LastOnGroundTime = 0;
+		JumpDelay = Data.jumpDelayTime;
 		_isStuckOnWall = false;
 
 		#region Perform Jump
