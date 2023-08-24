@@ -679,6 +679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'WinLfinal '
       objectReference: {fileID: 0}
+    - target: {fileID: 6170810987691056184, guid: f6825b278d18a4100bbcc8d4278835e1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6825b278d18a4100bbcc8d4278835e1, type: 3}
 --- !u!1001 &2810869941250716808
