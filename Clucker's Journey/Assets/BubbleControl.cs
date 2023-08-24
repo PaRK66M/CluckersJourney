@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BubbleControl : MonoBehaviour
 {
+    public float destroyTimer = 15f;
     public float floatSpeed = 2f;
     public float raiseSpeed = 2f;
     public float floatHeight = 0.25f; 
@@ -17,39 +18,29 @@ public class BubbleControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Destroy(gameObject, destroyTimer);
+        tmp = GetComponent<CircleCollider2D>();
         startPos = transform.position;
+        start_raise_position = transform.position;
+        start_raise_time = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isBound)
-        {
-            // 根据sin函数计算浮动偏移
-            float yOffset = Mathf.Sin(Time.time * floatSpeed) * floatHeight;
+        float yOffset = (Time.time-start_raise_time)*raiseSpeed;
 
             // 设置新的位置
-            transform.position = startPos + new Vector3(0f, yOffset, 0f);
-        }
+        transform.position = start_raise_position + new Vector3(0f, yOffset , 0f);
+        Vector3 bubbleCenter = transform.position;
+        // 设置石头的位置为气泡的中心位置
+        tmp.transform.position = bubbleCenter- new Vector3(0f,0.2f,0f);
 
-        if (isBound && Input.GetKeyDown(KeyCode.S))
+        if (isBound && Input.GetButtonDown("Jump"))
         {
             UnbindChicken();
         }
-        if (isBound)
-        {
-            // 根据sin函数计算浮动偏移
-            float yOffset = (Time.time-start_raise_time)*raiseSpeed;
-
-            // 设置新的位置
-            transform.position = start_raise_position + new Vector3(0f, yOffset , 0f);
-            Vector3 bubbleCenter = transform.position;
-            // 设置石头的位置为气泡的中心位置
-            tmp.transform.position = bubbleCenter- new Vector3(0f,0.2f,0f);
-
-            
-           // playerRb.velocity = new Vector3(0,0,0);
-        }
+        
         
     }
     void OnTriggerEnter2D (Collider2D col)
