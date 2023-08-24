@@ -139,7 +139,7 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 		#endregion
 
 		#region JUMP CHECKS
-		if (IsJumping && RB.velocity.y < 0)
+		if (RB.velocity.y < 0)
 		{
 			IsJumping = false;
 
