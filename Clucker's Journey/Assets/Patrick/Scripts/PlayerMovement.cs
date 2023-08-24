@@ -7,8 +7,10 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float jumpPower;
     public float jumpDecrease = 2;
+    public static bool inBubble = false;
     private float currentJumpPower;
     private bool jumpStart;
+
 
     private float movementX;
     private float movementY;
@@ -32,6 +34,11 @@ public class PlayerMovement : MonoBehaviour
     {
         movementX = Input.GetAxisRaw("Horizontal");
         jump = Input.GetButtonDown("Jump");
+        if (inBubble)
+        {
+            jumpStart = false;
+            grounded = true;
+        }
         if (jump && (grounded || !jumpStart))
         {
             if (jumpStart)
@@ -67,7 +74,10 @@ public class PlayerMovement : MonoBehaviour
             grounded = true;
             jumpStart = true;
         }
+        
     }
+
+    
 
     private void OnTriggerExit2D(Collider2D collision)
     {

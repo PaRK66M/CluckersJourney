@@ -10,8 +10,8 @@ public class BubbleControl : MonoBehaviour
     public Vector3 start_raise_position = new Vector3(0f,0f,0f);
     public float start_raise_time = 0.0f;
 
-    public static bool isBound = false;
-    public static Collider2D tmp;
+    public bool isBound = false;
+    public Collider2D tmp;
 
     private Vector3 startPos;
     // Start is called before the first frame update
@@ -32,7 +32,7 @@ public class BubbleControl : MonoBehaviour
             transform.position = startPos + new Vector3(0f, yOffset, 0f);
         }
 
-        if (isBound && Input.GetKeyDown(KeyCode.K))
+        if (isBound && Input.GetKeyDown(KeyCode.S))
         {
             UnbindChicken();
         }
@@ -60,6 +60,14 @@ public class BubbleControl : MonoBehaviour
             Vector3 bubbleCenter = transform.position;
         // 设置石头的位置为气泡的中心位置
             col.transform.position = bubbleCenter- new Vector3(0f,0.2f,0f);
+            
+            //tmp.jumpStart=false;
+            //col.transform.jumpStart=false;
+            //Renderer renderer = otherObject.GetComponent<Renderer>();
+            //renderer.material.color = Color.red;
+            //Renderer renderer = col.gameObject.GetComponent<Renderer>();
+            //renderer.jumpStart = false;
+            //renderer.material.color = Color.red;
             BindChicken(col.gameObject);
         }
     }
