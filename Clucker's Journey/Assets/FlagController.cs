@@ -21,7 +21,7 @@ public class FlagController : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Finish");
+            SceneManager.LoadScene("SecondPrototype");
             //Destroy(gameObject);
         }
     }
