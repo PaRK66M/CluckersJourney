@@ -6,6 +6,10 @@ public class Deathbox : MonoBehaviour
 {
     public GameManager GM;
 
+    void Awake()
+    {
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")

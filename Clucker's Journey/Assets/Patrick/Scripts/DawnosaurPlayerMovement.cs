@@ -382,7 +382,6 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 
 	private bool CanJump()
 	{
-		Debug.Log($"CanJump: {IsJumping} || {_isJumpFalling} || {LastOnGroundTime > 0}");
 		return IsJumping || _isJumpFalling || LastOnGroundTime > 0;
 	}
 
