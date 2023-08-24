@@ -36,6 +36,7 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 	public float LastOnWallTime { get; private set; }
 	public float LastOnWallRightTime { get; private set; }
 	public float LastOnWallLeftTime { get; private set; }
+	public float JumpDelay;
 
 	//Jump
 	private bool _isJumpCut;
@@ -84,6 +85,8 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 		LastOnWallTime -= Time.deltaTime;
 		LastOnWallRightTime -= Time.deltaTime;
 		LastOnWallLeftTime -= Time.deltaTime;
+
+		JumpDelay -= Time.deltaTime;
 
 		LastPressedJumpTime -= Time.deltaTime;
 		#endregion
@@ -157,7 +160,7 @@ public class DawnosaurPlayerMovement : MonoBehaviour
         }
 		
 		//Jump
-		if (CanJump() && LastPressedJumpTime > 0)
+		if (CanJump() && LastPressedJumpTime > 0 && JumpDelay < 0)
 		{
 			IsJumping = true;
 			_isJumpCut = false;
@@ -328,6 +331,7 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 		//Ensures we can't call Jump multiple times from one press
 		LastPressedJumpTime = 0;
 		LastOnGroundTime = 0;
+		JumpDelay = Data.jumpDelayTime;
 		_isStuckOnWall = false;
 
 		#region Perform Jump

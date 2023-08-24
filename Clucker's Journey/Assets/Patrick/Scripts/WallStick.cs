@@ -16,7 +16,7 @@ public class WallStick : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == 6) //Checks for ground layer as walls will be on the ground layer
+        if(collision.gameObject.layer == 6 && collision.gameObject.tag == "Sticky") //Checks for ground layer as walls will be on the ground layer
         {
             if(movementScript.LastOnGroundTime < 0 && movementScript._movedFromWall)
             {
