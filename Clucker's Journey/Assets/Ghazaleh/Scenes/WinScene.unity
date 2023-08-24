@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 2192856041688938245, guid: c7c2e829113964623b2de239874c7fcc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8708289729718597858, guid: c7c2e829113964623b2de239874c7fcc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -318,6 +322,10 @@ PrefabInstance:
     - target: {fileID: 6170810987691056184, guid: f6825b278d18a4100bbcc8d4278835e1, type: 3}
       propertyPath: m_Name
       value: 'WinLfinal '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6170810987691056184, guid: f6825b278d18a4100bbcc8d4278835e1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6825b278d18a4100bbcc8d4278835e1, type: 3}
