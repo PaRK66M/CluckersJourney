@@ -222,6 +222,14 @@ public class DawnosaurPlayerMovement : MonoBehaviour
         {
 			ANIMATOR.SetBool("Moving", true);
 		}
+        if (_isStuckOnWall)
+        {
+			ANIMATOR.SetBool("BeakMode", true);
+        }
+        else
+        {
+			ANIMATOR.SetBool("BeakMode", false);
+		}
         #endregion
     }
 
