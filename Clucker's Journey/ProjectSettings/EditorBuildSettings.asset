@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Patrick/Scenes/Finish.unity
+    guid: 882177f12e9cd82429d7944951a7ee51
+  - enabled: 1
+    path: Assets/Patrick/Scenes/MovementTesting.unity
+    guid: eeddca8eeb0cbbd41a6b7759f466caa5
   m_configObjects: {}
