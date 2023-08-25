@@ -28,6 +28,6 @@ public class BubbleSpawner : MonoBehaviour
     private void SpawnPrefab()
     {
         GameObject newPrefab = Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
-        newPrefab.GetComponent<BubbleControl>().destroyTimer = destroyDelay;
+        newPrefab.GetComponent<NewBubbleControls>().destroyTimer = destroyDelay;
     }
 }

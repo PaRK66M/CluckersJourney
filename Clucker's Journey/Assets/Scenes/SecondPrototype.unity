@@ -929,15 +929,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7420511161803664544, guid: 6a62f43d3e910d44cb9c065c40b19b2b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 93.62
+      value: 89.93
       objectReference: {fileID: 0}
     - target: {fileID: 7420511161803664544, guid: 6a62f43d3e910d44cb9c065c40b19b2b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35.37
+      value: 39.21
       objectReference: {fileID: 0}
     - target: {fileID: 7420511161803664544, guid: 6a62f43d3e910d44cb9c065c40b19b2b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.1777697
+      value: 7.5813794
       objectReference: {fileID: 0}
     - target: {fileID: 7420511161803664544, guid: 6a62f43d3e910d44cb9c065c40b19b2b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11945,9 +11945,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2556c04d3f968e48a1324bd26672c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 7173876306768608713, guid: 13a086d39ff732747881caec439a555e, type: 3}
+  prefabToSpawn: {fileID: 2121977341651656958, guid: 1e39d8146f8d6a648ab1219592ce70b4, type: 3}
   spawnInterval: 3
-  destroyDelay: 10
+  destroyDelay: 15
 --- !u!1 &1633348641
 GameObject:
   m_ObjectHideFlags: 0
@@ -12191,15 +12191,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6032887406998120190, guid: 9ade985db7178e248bb724abdf481a74, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 93.62
+      value: 89.93
       objectReference: {fileID: 0}
     - target: {fileID: 6032887406998120190, guid: 9ade985db7178e248bb724abdf481a74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35.37
+      value: 39.21
       objectReference: {fileID: 0}
     - target: {fileID: 6032887406998120190, guid: 9ade985db7178e248bb724abdf481a74, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.8222303
+      value: -2.4186206
       objectReference: {fileID: 0}
     - target: {fileID: 6032887407576531169, guid: 9ade985db7178e248bb724abdf481a74, type: 3}
       propertyPath: m_Follow
@@ -12207,15 +12207,15 @@ PrefabInstance:
       objectReference: {fileID: 1077171515}
     - target: {fileID: 6032887407576531170, guid: 9ade985db7178e248bb724abdf481a74, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 93.62
+      value: 89.93
       objectReference: {fileID: 0}
     - target: {fileID: 6032887407576531170, guid: 9ade985db7178e248bb724abdf481a74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35.37
+      value: 39.21
       objectReference: {fileID: 0}
     - target: {fileID: 6032887407576531170, guid: 9ade985db7178e248bb724abdf481a74, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.8222303
+      value: -2.4186206
       objectReference: {fileID: 0}
     - target: {fileID: 6032887408192507699, guid: 9ade985db7178e248bb724abdf481a74, type: 3}
       propertyPath: m_Name
@@ -12393,6 +12393,22 @@ PrefabInstance:
     - target: {fileID: 2121977341651656958, guid: 1e39d8146f8d6a648ab1219592ce70b4, type: 3}
       propertyPath: m_Name
       value: Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121977341651656958, guid: 1e39d8146f8d6a648ab1219592ce70b4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121977341651656958, guid: 1e39d8146f8d6a648ab1219592ce70b4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121977341651656959, guid: 1e39d8146f8d6a648ab1219592ce70b4, type: 3}
+      propertyPath: destroyTimer
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121977341651656959, guid: 1e39d8146f8d6a648ab1219592ce70b4, type: 3}
+      propertyPath: movementSpeed
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e39d8146f8d6a648ab1219592ce70b4, type: 3}

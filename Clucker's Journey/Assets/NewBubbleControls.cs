@@ -14,6 +14,8 @@ public class NewBubbleControls : MonoBehaviour
 
     public float rotationSpeed = 30.0f;
 
+    public float movementSpeed = 5.0f;
+
     private void Start()
     {
         Destroy(gameObject, destroyTimer);
@@ -27,7 +29,7 @@ public class NewBubbleControls : MonoBehaviour
             characterRigidbody = other.GetComponent<Rigidbody2D>();
             
             if (characterMovement != null)
-                characterMovement.enabled = false;
+                //characterMovement.enabled = false;
 
             if (characterRigidbody != null)
                 characterRigidbody.gravityScale = 0.0f;
@@ -39,18 +41,19 @@ public class NewBubbleControls : MonoBehaviour
 
     private void Update()
     {
+        transform.Translate(Vector2.up * movementSpeed * Time.deltaTime);
         if(isCaptured)
         {
             character.transform.position = transform.position;
             character.transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
         }
 
-        if (isCaptured && Input.GetKeyDown(KeyCode.Space))
+        if (isCaptured && Input.GetButtonDown("Jump"))
         {
             character.transform.rotation = Quaternion.Euler(characterInitialRotation);
 
             if (characterMovement != null)
-                characterMovement.enabled = true;
+                //characterMovement.enabled = true;
 
             if (characterRigidbody != null)
                 characterRigidbody.gravityScale = 1f;
@@ -67,7 +70,7 @@ public class NewBubbleControls : MonoBehaviour
             character.transform.rotation = Quaternion.Euler(characterInitialRotation);
 
             if (characterMovement != null)
-                characterMovement.enabled = true;
+                //characterMovement.enabled = true;
 
             if (characterRigidbody != null)
                 characterRigidbody.gravityScale = 1f;
