@@ -16,8 +16,10 @@ public class SelectControl : MonoBehaviour
     private GameObject[] lightBulbs; // 灯泡物体的数组
     private int selectedLightBulbIndex = 0; // 当前选择的灯泡索引
     private Vector3[] objectsize;
-    
-    
+
+    public LevelSceneManager lSM;
+
+    private bool newKey;
 
     private int change_index(int x)
     {
@@ -33,38 +35,58 @@ public class SelectControl : MonoBehaviour
 
     private void Start()
     {
+        newKey = true;
+        FindButtons();
+    }
+
+    public void FindButtons()
+    {
         // 使用标签查找灯泡物体
         lightBulbs = GameObject.FindGameObjectsWithTag(lightBulbTag);
-        int len= lightBulbs.Length;
+        int len = lightBulbs.Length;
         objectsize = new Vector3[len];
-        for(int i=0;i<len;i++)
+        for (int i = 0; i < len; i++)
         {
-            objectsize[i]=lightBulbs[i].GetComponent<Transform>().localScale;
+            objectsize[i] = lightBulbs[i].GetComponent<Transform>().localScale;
         }
         Debug.Log("ok");
-        lightBulbs[change_index(selectedLightBulbIndex)].GetComponent<Transform>().localScale = new Vector3(objectsize[change_index(selectedLightBulbIndex)].x*size_scale,objectsize[change_index(selectedLightBulbIndex)].y*size_scale,objectsize[change_index(selectedLightBulbIndex)].z);
+        lightBulbs[change_index(selectedLightBulbIndex)].GetComponent<Transform>().localScale = new Vector3(objectsize[change_index(selectedLightBulbIndex)].x * size_scale, objectsize[change_index(selectedLightBulbIndex)].y * size_scale, objectsize[change_index(selectedLightBulbIndex)].z);
+
     }
 
     private void Update()
     {
-        // 检测A键和D键的按下
-        if (Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal") < 0)
+        if (newKey)
         {
-            Debug.Log("A");
-            SelectPreviousLightBulb();
-        }
-        else if (Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal") > 0)
-        {
-            Debug.Log("D");
-            SelectNextLightBulb();
-        }
+            if (Input.GetAxis("Horizontal") < 0)
+            {
+                Debug.Log("A");
+                SelectPreviousLightBulb();
+                newKey = false;
+            }
+            else if (Input.GetAxis("Horizontal") > 0)
+            {
+                Debug.Log("D");
+                SelectNextLightBulb();
+                newKey = false;
+            }
 
-        // 检测S键的按下
-        if (Input.GetButtonDown("Jump"))
-        {
-            Debug.Log("S");
-            LightUpSelectedLightBulb();
+            // 检测S键的按下
+            if (Input.GetButtonDown("Jump"))
+            {
+                Debug.Log("S");
+                LightUpSelectedLightBulb();
+            }
         }
+        else
+        {
+            if(Input.GetAxis("Horizontal") == 0)
+            {
+                newKey = true;
+            }
+        }
+        // 检测A键和D键的按下
+        
     }
 
     private void SelectPreviousLightBulb()
@@ -110,7 +132,7 @@ public class SelectControl : MonoBehaviour
                 //SceneManager.LoadScene("haha");
                 Application.Quit();
         }
-        if(menuid==2)
+        else if(menuid==2)
         {
             if(selectedLightBulbIndex==3)
                 changeCanvas(0);
@@ -121,6 +143,15 @@ public class SelectControl : MonoBehaviour
             if(selectedLightBulbIndex==2)
                 SceneManager.LoadScene("level3");
 
+        }
+        else if (menuid == 3)
+        {
+            if (selectedLightBulbIndex == 0)
+                SceneManager.LoadScene("level2");
+            if (selectedLightBulbIndex == 1)
+                SceneManager.LoadScene("MenuScene");
+            if (selectedLightBulbIndex == 2)
+                lSM.RestartLevel();
         }
 
         //changeCanvas(change_index(selectedLightBulbIndex));
