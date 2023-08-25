@@ -137,20 +137,36 @@ public class SelectControl : MonoBehaviour
             if(selectedLightBulbIndex==3)
                 changeCanvas(0);
             if(selectedLightBulbIndex==0)
-                SceneManager.LoadScene("level1");
+                SceneManager.LoadScene("TutorialLevel");
             if(selectedLightBulbIndex==1)
-                SceneManager.LoadScene("level2");
+                SceneManager.LoadScene("SecondPrototype");
             if(selectedLightBulbIndex==2)
-                SceneManager.LoadScene("level3");
+                SceneManager.LoadScene("WinterLevelPrototype");
 
         }
         else if (menuid == 3)
         {
             if (selectedLightBulbIndex == 0)
-                SceneManager.LoadScene("level2");
+                SceneManager.LoadScene("SecondPrototype");
             if (selectedLightBulbIndex == 1)
-                SceneManager.LoadScene("MenuScene");
+                SceneManager.LoadScene("myscene");
             if (selectedLightBulbIndex == 2)
+                lSM.RestartLevel();
+        }
+        else if (menuid == 4)
+        {
+            if (selectedLightBulbIndex == 0)
+                SceneManager.LoadScene("WinterLevelPrototype");
+            if (selectedLightBulbIndex == 1)
+                SceneManager.LoadScene("myscene");
+            if (selectedLightBulbIndex == 2)
+                lSM.RestartLevel();
+        }
+        else if (menuid == 5)
+        {
+            if (selectedLightBulbIndex == 0)
+                SceneManager.LoadScene("myscene");
+            if (selectedLightBulbIndex == 1)
                 lSM.RestartLevel();
         }
 
