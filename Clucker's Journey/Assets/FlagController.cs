@@ -5,23 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class FlagController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject finishHud;
 
     void OnTriggerEnter2D (Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("SecondPrototype");
+            finishHud.SetActive(true);
             //Destroy(gameObject);
         }
     }
