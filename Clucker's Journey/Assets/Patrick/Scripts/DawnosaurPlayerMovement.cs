@@ -23,6 +23,7 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 	//Components
 	public Rigidbody2D RB { get; private set; }
 	public Animator ANIMATOR;
+	public AudioSource playerAudioSource;
 
 	//Variables control the various actions the player can perform at any time.
 	//These are fields which can are public allowing for other sctipts to read them
@@ -354,7 +355,7 @@ public class DawnosaurPlayerMovement : MonoBehaviour
 		//    force -= RB.velocity.y;
 		*/
 
-
+		playerAudioSource.Play();
 
 		RB.AddForce(Vector2.up * force, ForceMode2D.Impulse);
 		currentJumpForce /= Data.multiJumpModifier; //modifies the current jump force for the next jump

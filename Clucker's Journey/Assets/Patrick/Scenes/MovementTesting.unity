@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71abb2b27e9c2d042b61fa01d0593512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyTimer: 15
   floatSpeed: 2
   raiseSpeed: 2
   floatHeight: 0.25
@@ -335,6 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71abb2b27e9c2d042b61fa01d0593512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyTimer: 15
   floatSpeed: 2
   raiseSpeed: 2
   floatHeight: 0.25
@@ -629,6 +631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c938ad93c9288664680c35fe3470c900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finishHud: {fileID: 0}
 --- !u!1 &1465150263
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71abb2b27e9c2d042b61fa01d0593512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyTimer: 15
   floatSpeed: 2
   raiseSpeed: 2
   floatHeight: 0.25
@@ -1025,6 +1029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c938ad93c9288664680c35fe3470c900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finishHud: {fileID: 0}
 --- !u!50 &1868596533
 Rigidbody2D:
   serializedVersion: 4
@@ -1116,6 +1121,10 @@ PrefabInstance:
     - target: {fileID: 7420511161803664548, guid: 6a62f43d3e910d44cb9c065c40b19b2b, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420511161803664548, guid: 6a62f43d3e910d44cb9c065c40b19b2b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a62f43d3e910d44cb9c065c40b19b2b, type: 3}
