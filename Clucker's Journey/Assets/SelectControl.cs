@@ -47,7 +47,7 @@ public class SelectControl : MonoBehaviour
         objectsize = new Vector3[len];
         for (int i = 0; i < len; i++)
         {
-            objectsize[i] = lightBulbs[i].GetComponent<Transform>().localScale;
+            objectsize[i] = new Vector3(1, 1, 1);
         }
         Debug.Log("ok");
         lightBulbs[change_index(selectedLightBulbIndex)].GetComponent<Transform>().localScale = new Vector3(objectsize[change_index(selectedLightBulbIndex)].x * size_scale, objectsize[change_index(selectedLightBulbIndex)].y * size_scale, objectsize[change_index(selectedLightBulbIndex)].z);

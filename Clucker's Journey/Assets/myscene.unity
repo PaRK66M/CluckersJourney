@@ -308,10 +308,72 @@ MonoBehaviour:
   CanvasOff:
   - {fileID: 960198580}
   number_of_object: 2
-  is_reversed: 0
+  is_reversed: 1
   menuid: 1
   size_scale: 1.5
   lightBulbTag: select
+  lSM: {fileID: 0}
+--- !u!1001 &1463107274
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 537110732055242308, guid: b337b2c01fb467143bfe05d512e66c33, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9f0d8c4e59553254e8b040f08abe4783, type: 3}
+    - target: {fileID: 537110732055242309, guid: b337b2c01fb467143bfe05d512e66c33, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 537110732055242309, guid: b337b2c01fb467143bfe05d512e66c33, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 60.361885
+      objectReference: {fileID: 0}
+    - target: {fileID: 537110732055242309, guid: b337b2c01fb467143bfe05d512e66c33, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.92016
+      objectReference: {fileID: 0}
+    - target: {fileID: 537110732055242309, guid: b337b2c01fb467143bfe05d512e66c33, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.42222768
+      objectReference: {fileID: 0}
+    - target: {fileID: 537110732055242309, guid: b337b2c01fb467143bfe05d512e66c33, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 537110732055242309, guid: b337b2c01fb467143bfe05d512e66c33, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 537110732055242309, guid: b337b2c01fb467143bfe05d512e66c33, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 537110732055242309, guid: b337b2c01fb467143bfe05d512e66c33, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 537110732055242309, guid: b337b2c01fb467143bfe05d512e66c33, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 537110732055242309, guid: b337b2c01fb467143bfe05d512e66c33, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 537110732055242309, guid: b337b2c01fb467143bfe05d512e66c33, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 537110732055242311, guid: b337b2c01fb467143bfe05d512e66c33, type: 3}
+      propertyPath: m_Name
+      value: MusicManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b337b2c01fb467143bfe05d512e66c33, type: 3}
 --- !u!1 &1548352493
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,11 +511,12 @@ MonoBehaviour:
   - {fileID: 960198580}
   CanvasOff:
   - {fileID: 2132473906}
-  number_of_object: 0
+  number_of_object: 4
   is_reversed: 0
   menuid: 2
   size_scale: 1.25
   lightBulbTag: select
+  lSM: {fileID: 0}
 --- !u!1001 &1961184639
 PrefabInstance:
   m_ObjectHideFlags: 0
