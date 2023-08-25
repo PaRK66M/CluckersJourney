@@ -27781,5 +27781,70 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicManager
       objectReference: {fileID: 0}
+    - target: {fileID: 537110732055242311, guid: b337b2c01fb467143bfe05d512e66c33, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b337b2c01fb467143bfe05d512e66c33, type: 3}
+--- !u!1001 &3550590938614541551
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3550590939471259770, guid: 06455613307c21b43a4d5e2f526980c8, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550590939471259770, guid: 06455613307c21b43a4d5e2f526980c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -39.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550590939471259770, guid: 06455613307c21b43a4d5e2f526980c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550590939471259770, guid: 06455613307c21b43a4d5e2f526980c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.0955949
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550590939471259770, guid: 06455613307c21b43a4d5e2f526980c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550590939471259770, guid: 06455613307c21b43a4d5e2f526980c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550590939471259770, guid: 06455613307c21b43a4d5e2f526980c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550590939471259770, guid: 06455613307c21b43a4d5e2f526980c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550590939471259770, guid: 06455613307c21b43a4d5e2f526980c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550590939471259770, guid: 06455613307c21b43a4d5e2f526980c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550590939471259770, guid: 06455613307c21b43a4d5e2f526980c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550590939471259773, guid: 06455613307c21b43a4d5e2f526980c8, type: 3}
+      propertyPath: m_Name
+      value: Racoon wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550590939471259773, guid: 06455613307c21b43a4d5e2f526980c8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 06455613307c21b43a4d5e2f526980c8, type: 3}
